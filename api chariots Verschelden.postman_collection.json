@@ -1,0 +1,683 @@
+{
+	"info": {
+		"_postman_id": "e5df551f-8ccb-4fac-b23b-4aa07bdac22d",
+		"name": "api chariots Verschelden",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24289237"
+	},
+	"item": [
+		{
+			"name": "get entry point",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Contenu ok\", () => {\r",
+							"    pm.expect(pm.response.text()).to.include(\"_links\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create groupe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", () => {\r",
+							"    pm.response.to.have.status(201);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Contenu ok\", () => {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Gojireux\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/groupes?nom=Gojireux",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"groupes"
+					],
+					"query": [
+						{
+							"key": "nom",
+							"value": "Gojireux"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get groupes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Contenu ok\", () => {\r",
+							"    pm.expect(pm.response.text()).to.include(\"gojira\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/groupes",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"groupes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modify groupe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", () => {\r",
+							"    pm.response.to.have.status(201);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Contenu ok\", () => {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Godzideux\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/groupes/gojira?nom=Godzideux",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"groupes",
+						"gojira"
+					],
+					"query": [
+						{
+							"key": "nom",
+							"value": "Godzideux"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get modified groupe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Contenu ok\", () => {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Godzideux\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/groupes/Godzideux",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"groupes",
+						"Godzideux"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create concert",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", () => {\r",
+							"    pm.response.to.have.status(201);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Contenu ok\", () => {\r",
+							"    pm.expect(pm.response.text()).to.include(\"/concerts/GijideuxTour\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/groupes/Godzideux/concerts?nom=GijideuxTour&date=15/12/2023",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"groupes",
+						"Godzideux",
+						"concerts"
+					],
+					"query": [
+						{
+							"key": "nom",
+							"value": "GijideuxTour"
+						},
+						{
+							"key": "date",
+							"value": "15/12/2023"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get concerts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Contenu ok\", () => {\r",
+							"    pm.expect(pm.response.text()).to.include(\"GijideuxTour\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/concerts",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"concerts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get concert details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Contenu ok\", () => {\r",
+							"    pm.expect(pm.response.text()).to.include(\"/concerts/GozillaTour/tickets\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/concerts/GozillaTour",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"concerts",
+						"GozillaTour"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get concerts for group",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Contenu ok\", () => {\r",
+							"    pm.expect(pm.response.text()).to.include(\"regions/bananaTree\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/groupes/Gojireux/concerts",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"groupes",
+						"Gojireux",
+						"concerts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create available ticket",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", () => {\r",
+							"    pm.response.to.have.status(201);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Contenu ok\", () => {\r",
+							"    pm.expect(pm.response.text()).to.include(\"price:2000\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/concerts/2/tickets?price=2000",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"concerts",
+						"2",
+						"tickets"
+					],
+					"query": [
+						{
+							"key": "price",
+							"value": "2000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get tickets",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Contenu ok\", () => {\r",
+							"    pm.expect(pm.response.text()).to.include(\"tickets/1\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/tickets",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tickets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get tickets for concert",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Contenu ok\", () => {\r",
+							"    pm.expect(pm.response.text()).to.include(\"place:33\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/concerts/GodzillaTour/tickets",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"concerts",
+						"GodzillaTour",
+						"tickets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get tickets details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Contenu ok\", () => {\r",
+							"    pm.expect(pm.response.text()).to.include(\"bananaGrape\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/concerts/GozillaTour/tickets/33",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"concerts",
+						"GozillaTour",
+						"tickets",
+						"33"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buy ticket",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", () => {\r",
+							"    pm.response.to.have.status(201);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Contenu ok\", () => {\r",
+							"    pm.expect(pm.response.text()).to.include(\"tickets/1\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/tickets/1?available=0",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tickets",
+						"1"
+					],
+					"query": [
+						{
+							"key": "available",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get tickets details Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Contenu ok\", () => {\r",
+							"    pm.expect(pm.response.text()).to.include(\"bananaGrape\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/concerts/GozillaTour/tickets/33",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"concerts",
+						"GozillaTour",
+						"tickets",
+						"33"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete ticket",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", () => {\r",
+							"    pm.response.to.have.status(204);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/tickets/1",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tickets",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete concert",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", () => {\r",
+							"    pm.response.to.have.status(204);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/concerts/1",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"concerts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete group",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", () => {\r",
+							"    pm.response.to.have.status(204);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/groupes/Gojireux",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"groupes",
+						"Gojireux"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
